@@ -1,5 +1,6 @@
 var remainingSteps, totalReward, position;
-var boardProbabilities = createBoard();
+var boardProbabilities = createBoard(BOARD_SIZE);
+var observations = createObservations(BOARD_SIZE);
 
 function reset() {
 	remainingSteps = 20;

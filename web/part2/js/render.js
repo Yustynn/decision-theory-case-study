@@ -1,19 +1,35 @@
 function renderGrid(position) {
-	let style = 'repeat(' + String(BOARD_SIZE) + ', 100px)';
-	$('#main').css('grid-template-columns', style);
-	$('#main').css('grid-template-rows', style);
+	let style = 'repeat(' + String(BOARD_SIZE) + ', 128px)';
+	$('#grid').css('grid-template-columns', style);
+	$('#grid').css('grid-template-rows', style);
 
-	let ordinaryCell = '<div class="cell"></div>\n';
-	let activeCell = '<div class="cell active"><i class="large material-icons">child_care</i></div>\n';
+		
 
 	let htmlString = '';
 	for (let i=0; i<BOARD_SIZE; i++) {
 		for (let j=0; j<BOARD_SIZE; j++) {
-			if (i == position.y && j == position.x) htmlString += activeCell;
-			else htmlString += ordinaryCell;
+			if (i == position.y && j == position.x) {
+				let activeCell = `
+					<div class="cell active">
+						<i class="large material-icons">face</i>
+					</div>\n
+				`;
+				htmlString += activeCell;
+			}
+			else {
+				let { neutral, monster, treasure } = observations[i][j];
+				let ordinaryCell = `
+					<div class="cell">
+						<div class="board-info"><i class="material-icons">fiber_manual_record</i><span>${neutral}</span></div>
+						<div class="board-info"><i class="material-icons">mood_bad</i><span>${monster}</span></div>
+						<div class="board-info"><i class="material-icons">monetization_on</i><span>${treasure}</span></div>
+					</div>\n
+				`;
+				htmlString += ordinaryCell;
+			}
 		}
 	}
-	$('#main').html(htmlString);
+	$('#grid').html(htmlString);
 }
 
 function renderReward() {

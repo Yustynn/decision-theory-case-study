@@ -4,8 +4,11 @@ html, body {
 }
 
 #main {
-	margin-top: 60px;
-	
+	height: 100%:;
+	padding-top: 60px;
+}
+
+#grid {
 	display: grid;
 	grid-gap: 2px;
 	grid-auto-flow: row;
@@ -13,11 +16,31 @@ html, body {
 
 .cell {
 	background-color: #efefef;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.cell p {
+	text-align: left;
+	margin: 0;
+}
+.cell i.large {
+	color: black;
+}
+.cell .board-info {
+	width: 50%;
+
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
 }
 
-i.large {
-	padding: 5px;
-	color: black;
+#info {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
 .info {
@@ -28,10 +51,14 @@ i.large {
 	margin: 24px 16px;
 }
 
-h3 {
+.info h3 {
 	margin: 0;
 }
 
-.btn {
-	height: 100%;
+.btn.large {
+	padding: 0;
+
+	font-size: 90px;
+	width: 90px;
+	height: 90px;
 }
