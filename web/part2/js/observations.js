@@ -10,6 +10,7 @@ function createObservations(size) {
 	return board;
 }
 
-function updateObservations(x, y, rewardType) {
+function updateObservations(position, rewardType) {
+	let { x, y } = position;
 	observations[y][x][rewardType] += 1;
 }

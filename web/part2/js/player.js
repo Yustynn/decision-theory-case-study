@@ -43,6 +43,10 @@ function moveRight() {
 }
 
 $(document).keydown(e => {
+	for (key in keycodes) {
+		if (e.which === keycodes[key]) e.preventDefault();
+	}
+
 	if (e.which === keycodes.UP) moveUp();
 	if (e.which === keycodes.DOWN) moveDown();
 	if (e.which === keycodes.LEFT) moveLeft();

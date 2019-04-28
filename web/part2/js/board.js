@@ -29,10 +29,10 @@ function updateReward(position) {
 	let rewardType = getRewardType(cellProbabilities);
 
 	updateRewards(rewardType);
-	updateObservations(x, y, rewardType);
+	updateObservations(position, rewardType);
 
 	renderReward();
-	renderGrid(position);
+	renderGrid(position, rewardType);
 }
 
 function getRewardType(cellProbabilities) {
