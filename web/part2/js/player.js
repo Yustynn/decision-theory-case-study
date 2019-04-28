@@ -11,7 +11,7 @@ function moveUp() {
 	if (position.y == 0) return;
 
 	remainingSteps -= 1;
-	if (remainingSteps === 0) printHistory();
+	if (remainingSteps === 0) logHistory();
 
 	position.y -= 1;
 
@@ -23,7 +23,7 @@ function moveDown() {
 	if (position.y == BOARD_SIZE-1) return;
 
 	remainingSteps -= 1;
-	if (remainingSteps === 0) printHistory();
+	if (remainingSteps === 0) logHistory();
 
 	position.y += 1;
 
@@ -35,7 +35,7 @@ function moveLeft() {
 	if (position.x == 0) return;
 
 	remainingSteps -= 1;
-	if (remainingSteps === 0) printHistory();
+	if (remainingSteps === 0) logHistory();
 
 	position.x -= 1;
 
@@ -47,7 +47,7 @@ function moveRight() {
 	if (position.x == BOARD_SIZE-1) return;
 
 	remainingSteps -= 1;
-	if (remainingSteps === 0) printHistory();
+	if (remainingSteps === 0) logHistory();
 
 	position.x += 1;
 

@@ -8,7 +8,22 @@ function addHistory(position, rewardType) {
 	history.push(obj);
 }
 
-function printHistory() {
+function logHistory() {
 	let string = JSON.stringify(history);
-	console.log(string);
+	let log = {
+		rounds,
+		history: string,
+	};
+
+	let body = JSON.stringify(log);
+	fetch('http://10.12.1.221:5000/log', {
+		method: 'POST',
+		mode: 'no-cors',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		body,
+	});
+
+	rounds += 1;
 }
