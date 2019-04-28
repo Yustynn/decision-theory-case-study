@@ -1,0 +1,37 @@
+html, body {
+	height: 100%;
+	overflow: hidden;
+}
+
+#main {
+	margin-top: 60px;
+	
+	display: grid;
+	grid-gap: 2px;
+	grid-auto-flow: row;
+}
+
+.cell {
+	background-color: #efefef;
+}
+
+i.large {
+	padding: 5px;
+	color: black;
+}
+
+.info {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	margin: 24px 16px;
+}
+
+h3 {
+	margin: 0;
+}
+
+.btn {
+	height: 100%;
+}
