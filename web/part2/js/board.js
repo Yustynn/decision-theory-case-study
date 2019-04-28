@@ -28,8 +28,10 @@ function updateReward(position) {
 	let cellProbabilities = boardProbabilities[y][x];
 	let rewardType = getRewardType(cellProbabilities);
 
-	updateRewards(rewardType);
+	totalReward += rewards[rewardType];
 	updateObservations(position, rewardType);
+
+	addHistory(position, rewardType);
 
 	renderReward();
 	renderGrid(position, rewardType);
@@ -42,8 +44,4 @@ function getRewardType(cellProbabilities) {
 	if (randVal < p1) return 'neutral';
 	if (randVal < p2) return 'monster';
 	return 'treasure';
-}
-
-function updateRewards(rewardType) {
-	totalReward += rewards[rewardType];
 }

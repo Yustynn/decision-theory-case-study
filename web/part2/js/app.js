@@ -2,6 +2,8 @@ let gameIndex = 0;  // game number to select preset board -- [0, 4]
 let boardProbabilities;
 let remainingSteps, totalReward, position;
 let observations = createObservations(BOARD_SIZE);
+let history = [];
+
 
 function reset() {
 	boardProbabilities = presetBoards[gameIndex];
@@ -12,6 +14,7 @@ function reset() {
 		x: Math.floor(BOARD_SIZE / 2),
 		y: Math.floor(BOARD_SIZE / 2),
 	};
+	resetHistory();
 
 	renderGrid(position);
 	renderReward();

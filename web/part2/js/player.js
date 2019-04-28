@@ -9,7 +9,10 @@ var keycodes = {
 function moveUp() {
 	if (remainingSteps == 0) return;
 	if (position.y == 0) return;
+
 	remainingSteps -= 1;
+	if (remainingSteps === 0) printHistory();
+
 	position.y -= 1;
 
 	updateReward(position);
@@ -18,7 +21,10 @@ function moveUp() {
 function moveDown() {
 	if (remainingSteps == 0) return;
 	if (position.y == BOARD_SIZE-1) return;
+
 	remainingSteps -= 1;
+	if (remainingSteps === 0) printHistory();
+
 	position.y += 1;
 
 	updateReward(position);
@@ -27,7 +33,10 @@ function moveDown() {
 function moveLeft() {
 	if (remainingSteps == 0) return;
 	if (position.x == 0) return;
+
 	remainingSteps -= 1;
+	if (remainingSteps === 0) printHistory();
+
 	position.x -= 1;
 
 	updateReward(position);
@@ -36,7 +45,10 @@ function moveLeft() {
 function moveRight() {
 	if (remainingSteps == 0) return;
 	if (position.x == BOARD_SIZE-1) return;
+
 	remainingSteps -= 1;
+	if (remainingSteps === 0) printHistory();
+
 	position.x += 1;
 
 	updateReward(position);
